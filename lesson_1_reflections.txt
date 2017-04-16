@@ -1,0 +1,102 @@
+diff -u new.js old.js
+
+Used in terminal, it indicates differences between the two files. Very convenient if you have the two files saved. Still, I expect git to offer more powerful tools.
+
+Saving manual copies of versions is very troublesome. Other alternatives are dropbox, which saves some old versions for 30 days. Google docs saves old versions of files. Wikipedia saves all old versions of articles.
+
+Q: How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+
+I guess that having access to the entire history of a file lets you compare the different versions. Lets you analyze mistakes. Lets you bring forward some good solutions used at some point in creating a program, before you screwed them up. It happens sometimes that you screw up a program at some point, and you regret it later on.
+
+Version control system---any system which allows you to store and access different versions of files.
+
+Git---was created by Linus Torvalds. The word "git" is from British English slang for an "asshole", and is from the epithet used to describe the author.
+
+you can use the "git diff" command in git in order to compare two versions of the same file:
+
+git diff new-version-id old-version-id
+
+> A good rule of thumb is to make one commit per logical change. For example, if you fixed a typo, then fixed a bug in a separate part of the file, you should use one commit for each change since they are logically separate. If you do this, each commit will have one purpose that can be easily understood. Git allows you to write a short message explaining what was changed in each commit, and that message will be more useful if each commit has a single logical change.
+
+Q: What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+
+When you have versions automatically saved, you don't need to cluster your memory remembering that you need to push the repo to save the version. Bad side of this is that you can't possibly add comments when the version is automatically saved, and the automatically saved version is not saved in logical chunks, but based on an algorithm over which you have limited control. With manually choosing when to save, you need to remember to do it, and do it manually. All in all, this seems to be the best option at the moment.
+
+Q: Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+
+I guess the two systems are used for different purposes? Git is primarily for programmers, and in programming at times it is quite crucial to input a change into several files at once. I don't know much about Google Docs, but I guess it's more for sharing spreadsheets and text files and stuff, and uploading a change to multiple files at once has little sense there? Am I right?
+
+> Cloning a Repository
+> To clone a repository, run git clone followed by a space and the repository URL.
+>
+> Asteroids URL
+> Use the following url to clone the Asteroids repository: https://github.com/udacity/asteroids.git
+>
+> Exiting git log
+> To stop viewing git log output, press q (which stands for quit).
+>
+> Getting Colored Output
+> To get colored diff output, run git config --global color.ui auto
+> 
+> Using git log and git diff
+> As a reminder, running git log will show a list of the recent commits with information about them, including commit IDs. Running git diff followed by two commit IDs will compare the two versions of the code in those commits. If you need a refresher, you may want to rewatch this video.
+
+Q: How can you use the commands git log and git diff to view the history of files?
+
+Obviously, git log will give the log history, and git diff will show differences between two individual commits!
+
+Log shows commits in a particular repository.
+
+> Git Errors and Warnings Solution
+> Should not be doing an octopus
+> Octopus is a strategy Git uses to combine many different versions of code together. This message can appear if you try to use this strategy in an inappropriate situation.
+>
+> You are in 'detached HEAD' state
+> HEAD is what Git calls the commit you are currently on. You can “detach” the HEAD by switching to a previous commit, which we’ll see in the next video. Despite what it sounds like, it’s actually not a bad thing to detach the HEAD. Git just warns you so that you’ll realize you’re doing it.
+>
+> Panic! (the 'impossible' happened)
+> This is a real error message, but it’s not output by Git. Instead it’s output by GHC, the compiler for a programming language called Haskell. It’s reserved for particularly surprising errors!
+>
+> Takeaway We hope these errors and warnings amused you as much as they amused us! Now that you know what kind of errors Git can throw, you’re ready to start checking out previous versions of files with Caroline.
+
+git checkout commit_number --- the command reverts the file to the state of the commit indicated.
+
+Q: How might using version control make you more confident to make changes that could break something?
+
+Using version control system means that at any point I can revert the program to its previous version, and therefore can recklessly introduce any changes I want just for the heck of it. It gives an immense feeling of freedom, which can be of great benefit in a programming job.
+
+Q: Now that you have your workspace set up, what do you want to try using Git for?
+
+I have absolutely no use for git. I can't really think of anything. If I was creating some program or other, I could theoretically use it---but I'm not really doing anything which would demand version control!
+
+> Git command review
+> Compare two commits, printing each line that is present in one commit but not the other.
+>
+> git diff will do this. It takes two arguments - the two commit ids to compare. 
+>
+>
+> Make a copy of an entire Git repository, including the history, onto your own computer.
+>
+> git clone will do this. It takes one argument - the url of the repository to copy. 
+>
+>
+> Temporarily reset all files in a directory to their state at the time of a specific commit.
+>
+> git checkout will do this. It takes one argument - the commit ID to restore. 
+>
+>
+> Show the commits made in this repository, starting with the most recent.
+>
+> git log will do this. It doesn't take any arguments.
+
+
+
+
+
+
+
+
+
+
+
+

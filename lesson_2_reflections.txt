@@ -1,0 +1,45 @@
+Hidden file .git is in git repositories on your computer, keeping track of changes. You can see the hidden files from your command line, using the command:
+
+ls -a
+
+If you want to start from scratch, you need to tell git explicitly that you want to create a new repository.
+
+You don't need internet access to create a repository.
+
+You initialize a repository with the command:
+
+git init
+
+When you initialize a repo, there are no commits yet.
+
+Q: What happens when you initialize a repository? Why do you need to do it?
+
+The hidden file .git appears in the chosen directory, and you can start tracking the commits (initial commit needs to be indicated by you after initializing, it doesn't create any commits by default).
+
+You can just put in git commit to create a snapshot of the present working directory. But git gives you more control over the process. Git has an intermediate area, which is called the "staging area". You can add individual files to the staging area, and then commit the files from the staging area, but not the others. The command to add files to the staging area is:
+
+git add filename
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

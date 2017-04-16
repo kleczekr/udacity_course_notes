@@ -20,6 +20,17 @@ You can just put in git commit to create a snapshot of the present working direc
 
 git add filename
 
+Q: How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+I honestly don't know. If you want to resign from committing something, you can do it at this stage. But is it really necessary? It seems to unnecessarily complicate the entire process.
+
+To commit a file, you use the following command:
+
+git commit -m "Commit message"
+
+Writing commit messages is an art in itself.
+
+
 
 
 

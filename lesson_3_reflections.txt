@@ -4,5 +4,17 @@ Git also offers the option of a "remote repository", where you keep changes to b
 
 When pushing a repo to the server, you need to specify the branch to be pushed.
 
-You start a new repository from the website.
+You start a new repository from the website. You need to add the remote key to the repository on your computer then. Use the code:
+
+git remote add origin URL_provided_by_github
+
+Check status with the command:
+
+git remote
+
+Or:
+
+git remote -v
+
+The -v stands for "verbose", and it outputs more information.
 

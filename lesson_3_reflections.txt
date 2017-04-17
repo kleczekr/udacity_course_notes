@@ -1,0 +1,8 @@
+Github doesn't allow direct cloning onto their servers. So you first need to create a repo on their server.
+
+Git also offers the option of a "remote repository", where you keep changes to be introduced later on.
+
+When pushing a repo to the server, you need to specify the branch to be pushed.
+
+You start a new repository from the website.
+

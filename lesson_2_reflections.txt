@@ -30,6 +30,103 @@ git commit -m "Commit message"
 
 Writing commit messages is an art in itself.
 
+If you want to see the difference between the working directory and the staging area, you simply use the command:
+
+git diff
+
+without any arguments.
+
+git diff --staged
+
+Shows you changes in the staging area. The command:
+
+git reset --hard
+
+discards any changes in the working directory or the staging area. You need to be very careful running this command. Since the changes in the working directory or the staging area have not been committed, this command is not reversible.
+
+Q: How can you use the staging area to make sure you have one commit per logical change?
+
+You can print the differences between the working area and the staging area to make sure that the files in the staging area are all pertaining to a single logical change. Beyond that, I really don't know. The entire system still looks pretty much mysterious to me.
+
+You can build separate branches of the repository, with different features. E.g. you could build two language versions of a product, which in the final version could be changed from the interface, but at an early stage of the production would function as two different branches.
+
+Main branch is generally called "master branch".
+
+The current last commit of a branch is called the "tip of the branch".
+
+The process of combining two branches is called "merging".
+
+To check branches, you use:
+
+git branch
+
+To create a new branch, you use the command:
+
+git branch branchname
+
+To pick a branch, you use the command:
+
+git checkout branchname
+
+Q: What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+When you have several different version of the program you are working on, keeping several branches makes it easier to organize your work on the different versions.
+
+People working together often create a new branch for every feature or bug fix.
+
+You can use the following command to check out messages from commits, without other information. Handy, looks like a phone book---you can quickly look things up and get the abbreviated commit numbers:
+
+git log --graph --oneline
+
+You can also specify, which branches you want to see:
+
+git log --graph --oneline master coins
+
+If you are in the detached head state, you can retain changes you are making by starting a new branch. You do it running the following command:
+
+git checkout -b new_branch_name
+
+This is equivalent to the following two commands:
+
+git branch new_branch_name
+git checkout new_branch_name
+
+Q: How do the diagrams help you visualize the branch structure?
+
+They don't help me visualize the branch structure. I just think that the branch structure is perfectly understandable by itself. It might get complicated in more elaborate projects, but I've never worked on more elaborate projects. I just do my perfectly amateur projects, and they are understandable without diagrams!
+
+Now, how do you combine the master branch with another branch which introduced some changes, but doesn't have all the changes which the master has? Git can do it automatically. To merge the "coins" branch into the master branch you use the command:
+
+git merge master coins
+
+After you merge two branches, you might find it tricky to know what commit is the parent of which. Git has a separate command for that:
+
+git show commit_number
+
+To delete the merged branch, which is not necessary after merging, you use the code:
+
+git branch -d branch_name
+
+Q: What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+As far as I know, merging is necessary for reconciling changes made in two different branches. Quite crucial when two people were working on the same project, because both of them would be using different branches. You don't want to abandon some changes made in a different branch, or be forced to manually compare the two branches and add/remove single lines by hand!
+
+There can occur conflicts when merging files. E.g. when two changes pertain to one line of code.
+
+You should periodically merge older branches with the master branch, to give them all the functionality of the master branch. Checkout the other branch and merge:
+
+git checkout other_branch_name
+git merge master other_branch_name
+
+You will likely need to resolve conflicts, just open the file where conflicts are located and come at a version which doesn't have conflicts.
+
+Q: What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+I don't know, really. I guess it's really good that git can merge automatically when it is sure it's not going to break anything. At the same time, there needs to be some sort of protection for your projects, so that other people branching it don't break anything. That's it, I guess.
+
+
+
+
 
 
 

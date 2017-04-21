@@ -18,3 +18,79 @@ git remote -v
 
 The -v stands for "verbose", and it outputs more information.
 
+You upload the repo to github with the command:
+
+git push origin branchname
+
+Q: When would you want to use a remote repository rather than keeping all your work local?
+
+Probably when I'm not making notes for my personal use.
+
+To pull remote repository to your machine, you use the command:
+
+git pull origin branchname
+
+Q: Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+Obviously because automatic uploading stuff to a remote server is a gross violation of privacy. I have recently acquired some Apple products, and I am absolutely appalled by their constant violations of my private sphere by their absolute insistence on uploading my personal information to their "cloud". Never again. Git practice is good.
+
+Forking a repository is an actually interesting thing. Forking is making a copy of a github repository directly on the github servers without pulling down the code to the computer first.
+
+Q: Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+Fork you use when you want to copy someone else's repository and mess around with it. Then you can clone it, modify it and push the modified version to your github account. Clones are the versions you save in your desktop environment. Branches are alternative versions. Usually you'd create branches in your desktop environment. If you want to push a particular branch to github, you need to explicitly specify it. Generally you would rather upload the master branch, and not the experimental branches you are working with.
+
+If your local version was modified, and your remote version was also modified by someone, then you can run the command:
+
+git fetch origin
+
+This way, you have two branches: origin/master and master. You can now reconcile the differences before pushing the reconciled version.
+
+You can see differences with the command:
+
+git diff origin/master master
+
+To merge the changes with master you use the command:
+
+git merge master origin/master
+
+Then, after you resolve conflict in the file, you must run git add and git commit, in order to let git know you've resolved the conflict.
+
+You can replace this long operation with the command:
+
+git pull origin master
+
+Which basically accomplishes exactly that.
+
+There is something that is called a "fast-forward merge", but I'm not sure how it works. It occurs when you merge two commits, where one is an ancestor of the other. You need to merge into a branch that is an ancestor of the branch that you are merging from.
+
+Q: What is the benefit of having a copy of the last known state of the remote stored locally?
+
+Obviously you can then work on reconciling the differences between the remote file and the file stored on the computer. Depending on the size of the project, these can be significant.
+
+You can create a "pull request" on github if you've introduced changes. Those watching a repository will then receive a notification of the request. The request requests them to merge the requested change with master.
+
+Q: How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+I would most likely use email, which is comparably very inefficient, but is just a commonsensical solution. It just makes sense, because you are just exchanging files. So I would change a line or something in a file, and I'd send it to everyone else working on a program with explanation of the change and why they need to incorporate it. Of course some would forget to incorporate it, so we'd end up having conflicting versions of the same program. We would start fighting and fractions would form. The company would split. We would be suing one another for using our intellectual property.
+
+But there would perhaps be a bit more communication then?
+
+Q: When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+I could do that in cases the alternative presents not a direct improvement, but a different approach, which could then be evaluated by other participants in the project?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
